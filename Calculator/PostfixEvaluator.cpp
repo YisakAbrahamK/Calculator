@@ -1,4 +1,4 @@
-#include "PostfixEvaluator.h"
+﻿#include "PostfixEvaluator.h"
 #include <stack>
 #include <cmath>
 
@@ -62,6 +62,13 @@ double Evapost::Evaluate(string s)
 					st.pop();
 					st.push(tan(first));
 					continue;
+				}
+				else if (s[i] == '√') {
+					double first = st.top();
+					st.pop();
+					st.push(sqrt(first));
+					continue;
+					
 				}
 
 				double second = st.top();

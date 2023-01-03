@@ -1,4 +1,4 @@
-#include <string>
+﻿#include <string>
 #include <stack>
 #include "InfixToPostfix.h"
 
@@ -86,7 +86,7 @@ int infixToPost::prec(char c)
 {
     if (c == 's'||c=='t'||c=='c')
         return 4;
-    else if (c == '^')
+    else if (c == '^'||c=='√')
         return 3;
     else if (c == '/' || c == '*')
         return 2;

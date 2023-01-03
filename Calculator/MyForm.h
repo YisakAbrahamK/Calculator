@@ -1,4 +1,4 @@
-#pragma once
+﻿#pragma once
 #include "InfixToPostfix.h"
 #include "PostfixEvaluator.h"
 #include <msclr\marshal_cppstd.h>
@@ -187,7 +187,9 @@ private: System::Windows::Forms::Button^ btn4;
 private: System::Windows::Forms::Button^ btnPow;
 
 private: System::Windows::Forms::Button^ button20;
-private: System::Windows::Forms::Button^ button19;
+private: System::Windows::Forms::Button^ btnRadical;
+
+
 private: System::Windows::Forms::Button^ buttonTan;
 private: System::Windows::Forms::Button^ btnDot;
 private: System::Windows::Forms::Button^ btnDivison;
@@ -269,7 +271,7 @@ private: System::Windows::Forms::Button^ button26;
             this->btn4 = (gcnew System::Windows::Forms::Button());
             this->btnPow = (gcnew System::Windows::Forms::Button());
             this->button20 = (gcnew System::Windows::Forms::Button());
-            this->button19 = (gcnew System::Windows::Forms::Button());
+            this->btnRadical = (gcnew System::Windows::Forms::Button());
             this->buttonTan = (gcnew System::Windows::Forms::Button());
             this->btnBack = (gcnew System::Windows::Forms::Button());
             this->btnClear = (gcnew System::Windows::Forms::Button());
@@ -1005,7 +1007,7 @@ private: System::Windows::Forms::Button^ button26;
             this->tableLayoutPanel2->Controls->Add(this->btn4, 1, 3);
             this->tableLayoutPanel2->Controls->Add(this->btnPow, 4, 1);
             this->tableLayoutPanel2->Controls->Add(this->button20, 3, 1);
-            this->tableLayoutPanel2->Controls->Add(this->button19, 2, 1);
+            this->tableLayoutPanel2->Controls->Add(this->btnRadical, 2, 1);
             this->tableLayoutPanel2->Controls->Add(this->buttonTan, 1, 1);
             this->tableLayoutPanel2->Controls->Add(this->btnBack, 4, 0);
             this->tableLayoutPanel2->Controls->Add(this->btnClear, 3, 0);
@@ -1211,26 +1213,27 @@ private: System::Windows::Forms::Button^ button26;
             this->button20->UseCompatibleTextRendering = true;
             this->button20->UseVisualStyleBackColor = true;
             // 
-            // button19
+            // btnRadical
             // 
-            this->button19->AutoEllipsis = true;
-            this->button19->BackColor = System::Drawing::Color::White;
-            this->button19->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button19->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnRadical->AutoEllipsis = true;
+            this->btnRadical->BackColor = System::Drawing::Color::White;
+            this->btnRadical->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnRadical->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button19->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button19->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnRadical->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnRadical->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button19->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button19->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnRadical->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnRadical->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button19->Location = System::Drawing::Point(151, 69);
-            this->button19->Name = L"button19";
-            this->button19->Size = System::Drawing::Size(68, 60);
-            this->button19->TabIndex = 25;
-            this->button19->Text = L"0";
-            this->button19->UseCompatibleTextRendering = true;
-            this->button19->UseVisualStyleBackColor = true;
+            this->btnRadical->Location = System::Drawing::Point(151, 69);
+            this->btnRadical->Name = L"btnRadical";
+            this->btnRadical->Size = System::Drawing::Size(68, 60);
+            this->btnRadical->TabIndex = 25;
+            this->btnRadical->Text = L"√";
+            this->btnRadical->UseCompatibleTextRendering = true;
+            this->btnRadical->UseVisualStyleBackColor = true;
+            this->btnRadical->Click += gcnew System::EventHandler(this, &MyForm::btnRadical_Click);
             // 
             // buttonTan
             // 
@@ -1516,6 +1519,7 @@ private: System::Windows::Forms::Button^ button26;
             this->btnLog->Text = L"log";
             this->btnLog->UseCompatibleTextRendering = true;
             this->btnLog->UseVisualStyleBackColor = true;
+            this->btnLog->Click += gcnew System::EventHandler(this, &MyForm::btnLog_Click);
             // 
             // button26
             // 
@@ -2091,8 +2095,23 @@ private: System::Void btn4_Click(System::Object^ sender, System::EventArgs^ e) {
 
 }
 private: System::Void btnRadical_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (lblDisplay->Text->Length > 0) {
+        if ((lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0' && lblDisplay->Text[lblDisplay->Text->Length - 1] <= '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+            lblDisplay->Text += L"*";
+        }
+    }
+    lblDisplay->Text += btnRadical->Text;
+    lblDisplay->Text += L"(";
 }
 private: System::Void buttonPi_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (lblDisplay->Text->Length > 0) {
+        if ((lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0' && lblDisplay->Text[lblDisplay->Text->Length - 1] <= '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+            lblDisplay->Text += L"*";
+        }
+    }
+    
+    lblDisplay->Text += L"3.14159265359";
+    
 }
 private: System::Void btnMultiplication_Click(System::Object^ sender, System::EventArgs^ e) {
 
@@ -2241,6 +2260,9 @@ private: System::Void btnPow_Click(System::Object^ sender, System::EventArgs^ e)
 
         }
     }
+}
+private: System::Void btnLog_Click(System::Object^ sender, System::EventArgs^ e) {
+
 }
 };
 }

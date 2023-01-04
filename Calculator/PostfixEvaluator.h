@@ -4,7 +4,7 @@ using namespace std;
 
 class Evapost {
 public:
-	double Evaluate(string s);
+	double Evaluate(string s, bool degree);
 };
 
 

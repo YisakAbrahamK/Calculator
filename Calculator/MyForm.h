@@ -1,8 +1,12 @@
 ﻿#pragma once
+#define _USE_MATH_DEFINES
+#include <cmath>
 #include "InfixToPostfix.h"
 #include "PostfixEvaluator.h"
 #include <msclr\marshal_cppstd.h>
 #include "Utilitie.h"
+#include "BaseConverter.h" 
+
 namespace $safeprojectname$ {
 
 	using namespace System;
@@ -104,28 +108,42 @@ namespace $safeprojectname$ {
     private: System::Windows::Forms::ComboBox^ comboBox2;
     private: System::Windows::Forms::Label^ label1;
     private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel1;
-    private: System::Windows::Forms::Button^ button52;
-    private: System::Windows::Forms::Button^ button51;
-    private: System::Windows::Forms::Button^ button50;
-    private: System::Windows::Forms::Button^ button49;
-    private: System::Windows::Forms::Button^ button48;
-    private: System::Windows::Forms::Button^ button47;
-    private: System::Windows::Forms::Button^ button46;
-    private: System::Windows::Forms::Button^ button45;
-    private: System::Windows::Forms::Button^ button44;
-    private: System::Windows::Forms::Button^ button42;
-    private: System::Windows::Forms::Button^ button41;
-    private: System::Windows::Forms::Button^ button40;
-    private: System::Windows::Forms::Button^ button39;
-    private: System::Windows::Forms::Button^ button38;
-    private: System::Windows::Forms::Button^ button37;
-    private: System::Windows::Forms::Button^ button43;
-    private: System::Windows::Forms::Label^ label5;
-private: System::Windows::Forms::Button^ button56;
-private: System::Windows::Forms::Button^ button55;
-private: System::Windows::Forms::Button^ buttonCE;
+    private: System::Windows::Forms::Button^ buttonthree;
 
-private: System::Windows::Forms::Button^ button53;
+    private: System::Windows::Forms::Button^ buttonTwo;
+
+
+    private: System::Windows::Forms::Button^ buttonOne;
+    private: System::Windows::Forms::Button^ btnC;
+
+
+    private: System::Windows::Forms::Button^ btnSix;
+    private: System::Windows::Forms::Button^ buttonNine;
+
+
+
+
+
+
+private: System::Windows::Forms::Button^ buttonEight;
+private: System::Windows::Forms::Button^ btnA;
+
+
+private: System::Windows::Forms::Button^ btnSeven;
+
+
+
+private: System::Windows::Forms::Button^ btnFive;
+private: System::Windows::Forms::Label^ lblFrom;
+
+
+private: System::Windows::Forms::Button^ btnE;
+
+
+private: System::Windows::Forms::Button^ btnD;
+
+
+
 private: System::Windows::Forms::TableLayoutPanel^ tableLayoutPanel2;
 private: System::Windows::Forms::Button^ btnBack;
 private: System::Windows::Forms::Button^ btnClear;
@@ -167,26 +185,31 @@ private: System::Windows::Forms::Button^ btn9;
 
 private: System::Windows::Forms::Button^ btn8;
 private: System::Windows::Forms::Button^ btnSin;
+private: System::Windows::Forms::Button^ btnLogBase2;
 
 
 
 
 
-private: System::Windows::Forms::Button^ btn10pow;
+
 
 
 private: System::Windows::Forms::Button^ btn7;
 
 private: System::Windows::Forms::Button^ btn5;
+private: System::Windows::Forms::Label^ lblResultValue;
 
-private: System::Windows::Forms::Label^ label6;
+
+
+
 
 
 private: System::Windows::Forms::Button^ btnEquals;
 private: System::Windows::Forms::Button^ btn4;
 private: System::Windows::Forms::Button^ btnPow;
+private: System::Windows::Forms::Button^ buttonLn;
 
-private: System::Windows::Forms::Button^ button20;
+
 private: System::Windows::Forms::Button^ btnRadical;
 
 
@@ -196,6 +219,15 @@ private: System::Windows::Forms::Button^ btnDivison;
 private: System::Windows::Forms::Button^ btn0;
 private: System::Windows::Forms::Button^ buttonCos;
 private: System::Windows::Forms::Button^ button26;
+private: System::Windows::Forms::Button^ btnRad;
+private: System::Windows::Forms::Button^ btnfour;
+
+private: System::Windows::Forms::Button^ button0;
+private: System::Windows::Forms::Button^ btnF;
+
+
+private: System::Windows::Forms::Button^ btnB;
+
 
 
 
@@ -232,29 +264,25 @@ private: System::Windows::Forms::Button^ button26;
             this->tabControl2 = (gcnew System::Windows::Forms::TabControl());
             this->tabPage3 = (gcnew System::Windows::Forms::TabPage());
             this->tableLayoutPanel1 = (gcnew System::Windows::Forms::TableLayoutPanel());
-            this->button56 = (gcnew System::Windows::Forms::Button());
-            this->button55 = (gcnew System::Windows::Forms::Button());
-            this->buttonCE = (gcnew System::Windows::Forms::Button());
-            this->button53 = (gcnew System::Windows::Forms::Button());
-            this->button52 = (gcnew System::Windows::Forms::Button());
-            this->button51 = (gcnew System::Windows::Forms::Button());
-            this->button50 = (gcnew System::Windows::Forms::Button());
-            this->button49 = (gcnew System::Windows::Forms::Button());
-            this->button48 = (gcnew System::Windows::Forms::Button());
-            this->button47 = (gcnew System::Windows::Forms::Button());
-            this->button46 = (gcnew System::Windows::Forms::Button());
-            this->button45 = (gcnew System::Windows::Forms::Button());
-            this->button44 = (gcnew System::Windows::Forms::Button());
-            this->button42 = (gcnew System::Windows::Forms::Button());
-            this->button41 = (gcnew System::Windows::Forms::Button());
-            this->button40 = (gcnew System::Windows::Forms::Button());
-            this->button39 = (gcnew System::Windows::Forms::Button());
-            this->button38 = (gcnew System::Windows::Forms::Button());
-            this->button37 = (gcnew System::Windows::Forms::Button());
-            this->button43 = (gcnew System::Windows::Forms::Button());
+            this->btnfour = (gcnew System::Windows::Forms::Button());
+            this->button0 = (gcnew System::Windows::Forms::Button());
+            this->btnF = (gcnew System::Windows::Forms::Button());
+            this->btnE = (gcnew System::Windows::Forms::Button());
+            this->btnD = (gcnew System::Windows::Forms::Button());
+            this->buttonthree = (gcnew System::Windows::Forms::Button());
+            this->buttonTwo = (gcnew System::Windows::Forms::Button());
+            this->buttonOne = (gcnew System::Windows::Forms::Button());
+            this->btnC = (gcnew System::Windows::Forms::Button());
+            this->btnSix = (gcnew System::Windows::Forms::Button());
+            this->buttonNine = (gcnew System::Windows::Forms::Button());
+            this->buttonEight = (gcnew System::Windows::Forms::Button());
+            this->btnA = (gcnew System::Windows::Forms::Button());
+            this->btnB = (gcnew System::Windows::Forms::Button());
+            this->btnSeven = (gcnew System::Windows::Forms::Button());
+            this->btnFive = (gcnew System::Windows::Forms::Button());
             this->panel4 = (gcnew System::Windows::Forms::Panel());
-            this->label6 = (gcnew System::Windows::Forms::Label());
-            this->label5 = (gcnew System::Windows::Forms::Label());
+            this->lblResultValue = (gcnew System::Windows::Forms::Label());
+            this->lblFrom = (gcnew System::Windows::Forms::Label());
             this->label2 = (gcnew System::Windows::Forms::Label());
             this->comboBox2 = (gcnew System::Windows::Forms::ComboBox());
             this->label1 = (gcnew System::Windows::Forms::Label());
@@ -270,7 +298,7 @@ private: System::Windows::Forms::Button^ button26;
             this->btnEquals = (gcnew System::Windows::Forms::Button());
             this->btn4 = (gcnew System::Windows::Forms::Button());
             this->btnPow = (gcnew System::Windows::Forms::Button());
-            this->button20 = (gcnew System::Windows::Forms::Button());
+            this->buttonLn = (gcnew System::Windows::Forms::Button());
             this->btnRadical = (gcnew System::Windows::Forms::Button());
             this->buttonTan = (gcnew System::Windows::Forms::Button());
             this->btnBack = (gcnew System::Windows::Forms::Button());
@@ -290,7 +318,7 @@ private: System::Windows::Forms::Button^ button26;
             this->btn9 = (gcnew System::Windows::Forms::Button());
             this->btn8 = (gcnew System::Windows::Forms::Button());
             this->btnSin = (gcnew System::Windows::Forms::Button());
-            this->btn10pow = (gcnew System::Windows::Forms::Button());
+            this->btnLogBase2 = (gcnew System::Windows::Forms::Button());
             this->btn7 = (gcnew System::Windows::Forms::Button());
             this->btn5 = (gcnew System::Windows::Forms::Button());
             this->button13 = (gcnew System::Windows::Forms::Button());
@@ -310,6 +338,7 @@ private: System::Windows::Forms::Button^ button26;
             this->button2 = (gcnew System::Windows::Forms::Button());
             this->button1 = (gcnew System::Windows::Forms::Button());
             this->panel2 = (gcnew System::Windows::Forms::Panel());
+            this->btnRad = (gcnew System::Windows::Forms::Button());
             this->lblResult = (gcnew System::Windows::Forms::Label());
             this->lblDisplay = (gcnew System::Windows::Forms::Label());
             this->tabControl1->SuspendLayout();
@@ -363,7 +392,7 @@ private: System::Windows::Forms::Button^ button26;
             this->tabControl2->Location = System::Drawing::Point(0, 0);
             this->tabControl2->Name = L"tabControl2";
             this->tabControl2->SelectedIndex = 0;
-            this->tabControl2->Size = System::Drawing::Size(387, 593);
+            this->tabControl2->Size = System::Drawing::Size(400, 606);
             this->tabControl2->TabIndex = 1;
             // 
             // tabPage3
@@ -393,26 +422,22 @@ private: System::Windows::Forms::Button^ button26;
                 20)));
             this->tableLayoutPanel1->ColumnStyles->Add((gcnew System::Windows::Forms::ColumnStyle(System::Windows::Forms::SizeType::Percent,
                 20)));
-            this->tableLayoutPanel1->Controls->Add(this->button56, 4, 2);
-            this->tableLayoutPanel1->Controls->Add(this->button55, 4, 1);
-            this->tableLayoutPanel1->Controls->Add(this->buttonCE, 4, 0);
-            this->tableLayoutPanel1->Controls->Add(this->button53, 0, 3);
-            this->tableLayoutPanel1->Controls->Add(this->button52, 3, 2);
-            this->tableLayoutPanel1->Controls->Add(this->button51, 2, 2);
-            this->tableLayoutPanel1->Controls->Add(this->button50, 1, 2);
-            this->tableLayoutPanel1->Controls->Add(this->button49, 0, 2);
-            this->tableLayoutPanel1->Controls->Add(this->button48, 0, 3);
-            this->tableLayoutPanel1->Controls->Add(this->button47, 0, 3);
-            this->tableLayoutPanel1->Controls->Add(this->button46, 0, 3);
-            this->tableLayoutPanel1->Controls->Add(this->button45, 0, 3);
-            this->tableLayoutPanel1->Controls->Add(this->button44, 3, 1);
-            this->tableLayoutPanel1->Controls->Add(this->button42, 3, 0);
-            this->tableLayoutPanel1->Controls->Add(this->button41, 2, 0);
-            this->tableLayoutPanel1->Controls->Add(this->button40, 0, 0);
-            this->tableLayoutPanel1->Controls->Add(this->button39, 0, 1);
-            this->tableLayoutPanel1->Controls->Add(this->button38, 0, 1);
-            this->tableLayoutPanel1->Controls->Add(this->button37, 1, 0);
-            this->tableLayoutPanel1->Controls->Add(this->button43, 2, 1);
+            this->tableLayoutPanel1->Controls->Add(this->btnfour, 1, 1);
+            this->tableLayoutPanel1->Controls->Add(this->button0, 2, 3);
+            this->tableLayoutPanel1->Controls->Add(this->btnF, 4, 2);
+            this->tableLayoutPanel1->Controls->Add(this->btnE, 4, 1);
+            this->tableLayoutPanel1->Controls->Add(this->btnD, 4, 0);
+            this->tableLayoutPanel1->Controls->Add(this->buttonthree, 3, 2);
+            this->tableLayoutPanel1->Controls->Add(this->buttonTwo, 2, 2);
+            this->tableLayoutPanel1->Controls->Add(this->buttonOne, 1, 2);
+            this->tableLayoutPanel1->Controls->Add(this->btnC, 0, 2);
+            this->tableLayoutPanel1->Controls->Add(this->btnSix, 3, 1);
+            this->tableLayoutPanel1->Controls->Add(this->buttonNine, 3, 0);
+            this->tableLayoutPanel1->Controls->Add(this->buttonEight, 2, 0);
+            this->tableLayoutPanel1->Controls->Add(this->btnA, 0, 0);
+            this->tableLayoutPanel1->Controls->Add(this->btnB, 0, 1);
+            this->tableLayoutPanel1->Controls->Add(this->btnSeven, 1, 0);
+            this->tableLayoutPanel1->Controls->Add(this->btnFive, 2, 1);
             this->tableLayoutPanel1->Dock = System::Windows::Forms::DockStyle::Fill;
             this->tableLayoutPanel1->Location = System::Drawing::Point(3, 173);
             this->tableLayoutPanel1->Name = L"tableLayoutPanel1";
@@ -424,432 +449,364 @@ private: System::Windows::Forms::Button^ button26;
             this->tableLayoutPanel1->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Absolute, 20)));
             this->tableLayoutPanel1->Size = System::Drawing::Size(373, 391);
             this->tableLayoutPanel1->TabIndex = 2;
+            this->tableLayoutPanel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &MyForm::tableLayoutPanel1_Paint);
             // 
-            // button56
+            // btnfour
             // 
-            this->button56->AutoEllipsis = true;
-            this->button56->BackColor = System::Drawing::Color::White;
-            this->button56->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button56->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnfour->AutoEllipsis = true;
+            this->btnfour->BackColor = System::Drawing::Color::White;
+            this->btnfour->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnfour->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button56->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button56->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnfour->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnfour->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button56->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button56->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnfour->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnfour->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button56->Location = System::Drawing::Point(299, 197);
-            this->button56->Name = L"button56";
-            this->button56->Size = System::Drawing::Size(71, 91);
-            this->button56->TabIndex = 7;
-            this->button56->Text = L"CE";
-            this->button56->UseCompatibleTextRendering = true;
-            this->button56->UseVisualStyleBackColor = true;
+            this->btnfour->Location = System::Drawing::Point(77, 100);
+            this->btnfour->Name = L"btnfour";
+            this->btnfour->Size = System::Drawing::Size(68, 91);
+            this->btnfour->TabIndex = 18;
+            this->btnfour->Text = L"4";
+            this->btnfour->UseCompatibleTextRendering = true;
+            this->btnfour->UseVisualStyleBackColor = true;
+            this->btnfour->Click += gcnew System::EventHandler(this, &MyForm::btnfour_Click);
             // 
-            // button55
+            // button0
             // 
-            this->button55->AutoEllipsis = true;
-            this->button55->BackColor = System::Drawing::Color::White;
-            this->button55->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button55->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->button0->AutoEllipsis = true;
+            this->button0->BackColor = System::Drawing::Color::White;
+            this->button0->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->button0->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button55->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button55->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->button0->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->button0->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button55->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button55->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->button0->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->button0->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button55->Location = System::Drawing::Point(299, 100);
-            this->button55->Name = L"button55";
-            this->button55->Size = System::Drawing::Size(71, 91);
-            this->button55->TabIndex = 7;
-            this->button55->Text = L"CE";
-            this->button55->UseCompatibleTextRendering = true;
-            this->button55->UseVisualStyleBackColor = true;
+            this->button0->Location = System::Drawing::Point(151, 294);
+            this->button0->Name = L"button0";
+            this->button0->Size = System::Drawing::Size(68, 94);
+            this->button0->TabIndex = 15;
+            this->button0->Text = L"0";
+            this->button0->UseCompatibleTextRendering = true;
+            this->button0->UseVisualStyleBackColor = true;
+            this->button0->Click += gcnew System::EventHandler(this, &MyForm::button0_Click);
             // 
-            // buttonCE
+            // btnF
             // 
-            this->buttonCE->AutoEllipsis = true;
-            this->buttonCE->BackColor = System::Drawing::Color::White;
-            this->buttonCE->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->buttonCE->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnF->AutoEllipsis = true;
+            this->btnF->BackColor = System::Drawing::Color::White;
+            this->btnF->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnF->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->buttonCE->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->buttonCE->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnF->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnF->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->buttonCE->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->buttonCE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnF->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnF->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->buttonCE->Location = System::Drawing::Point(299, 3);
-            this->buttonCE->Name = L"buttonCE";
-            this->buttonCE->Size = System::Drawing::Size(71, 91);
-            this->buttonCE->TabIndex = 7;
-            this->buttonCE->Text = L"CE";
-            this->buttonCE->UseCompatibleTextRendering = true;
-            this->buttonCE->UseVisualStyleBackColor = true;
-            this->buttonCE->Click += gcnew System::EventHandler(this, &MyForm::buttonCE_Click);
+            this->btnF->Location = System::Drawing::Point(299, 197);
+            this->btnF->Name = L"btnF";
+            this->btnF->Size = System::Drawing::Size(71, 91);
+            this->btnF->TabIndex = 7;
+            this->btnF->Text = L"F";
+            this->btnF->UseCompatibleTextRendering = true;
+            this->btnF->UseVisualStyleBackColor = true;
+            this->btnF->Click += gcnew System::EventHandler(this, &MyForm::btnF_Click);
             // 
-            // button53
+            // btnE
             // 
-            this->button53->AutoEllipsis = true;
-            this->button53->BackColor = System::Drawing::Color::White;
-            this->button53->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button53->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnE->AutoEllipsis = true;
+            this->btnE->BackColor = System::Drawing::Color::White;
+            this->btnE->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnE->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button53->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button53->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnE->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnE->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button53->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button53->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnE->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnE->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button53->Location = System::Drawing::Point(3, 294);
-            this->button53->Name = L"button53";
-            this->button53->Size = System::Drawing::Size(68, 94);
-            this->button53->TabIndex = 18;
-            this->button53->Text = L"%";
-            this->button53->UseCompatibleTextRendering = true;
-            this->button53->UseVisualStyleBackColor = true;
+            this->btnE->Location = System::Drawing::Point(299, 100);
+            this->btnE->Name = L"btnE";
+            this->btnE->Size = System::Drawing::Size(71, 91);
+            this->btnE->TabIndex = 7;
+            this->btnE->Text = L"E";
+            this->btnE->UseCompatibleTextRendering = true;
+            this->btnE->UseVisualStyleBackColor = true;
+            this->btnE->Click += gcnew System::EventHandler(this, &MyForm::btnE_Click);
             // 
-            // button52
+            // btnD
             // 
-            this->button52->AutoEllipsis = true;
-            this->button52->BackColor = System::Drawing::Color::White;
-            this->button52->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button52->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnD->AutoEllipsis = true;
+            this->btnD->BackColor = System::Drawing::Color::White;
+            this->btnD->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnD->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button52->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button52->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnD->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnD->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button52->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button52->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnD->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnD->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button52->Location = System::Drawing::Point(225, 197);
-            this->button52->Name = L"button52";
-            this->button52->Size = System::Drawing::Size(68, 91);
-            this->button52->TabIndex = 17;
-            this->button52->Text = L"3";
-            this->button52->UseCompatibleTextRendering = true;
-            this->button52->UseVisualStyleBackColor = true;
+            this->btnD->Location = System::Drawing::Point(299, 3);
+            this->btnD->Name = L"btnD";
+            this->btnD->Size = System::Drawing::Size(71, 91);
+            this->btnD->TabIndex = 7;
+            this->btnD->Text = L"D";
+            this->btnD->UseCompatibleTextRendering = true;
+            this->btnD->UseVisualStyleBackColor = true;
+            this->btnD->Click += gcnew System::EventHandler(this, &MyForm::btnD_Click);
             // 
-            // button51
+            // buttonthree
             // 
-            this->button51->AutoEllipsis = true;
-            this->button51->BackColor = System::Drawing::Color::White;
-            this->button51->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button51->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonthree->AutoEllipsis = true;
+            this->buttonthree->BackColor = System::Drawing::Color::White;
+            this->buttonthree->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->buttonthree->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button51->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button51->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonthree->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->buttonthree->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button51->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button51->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->buttonthree->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->buttonthree->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button51->Location = System::Drawing::Point(151, 197);
-            this->button51->Name = L"button51";
-            this->button51->Size = System::Drawing::Size(68, 91);
-            this->button51->TabIndex = 16;
-            this->button51->Text = L"2";
-            this->button51->UseCompatibleTextRendering = true;
-            this->button51->UseVisualStyleBackColor = true;
+            this->buttonthree->Location = System::Drawing::Point(225, 197);
+            this->buttonthree->Name = L"buttonthree";
+            this->buttonthree->Size = System::Drawing::Size(68, 91);
+            this->buttonthree->TabIndex = 17;
+            this->buttonthree->Text = L"3";
+            this->buttonthree->UseCompatibleTextRendering = true;
+            this->buttonthree->UseVisualStyleBackColor = true;
+            this->buttonthree->Click += gcnew System::EventHandler(this, &MyForm::buttonthree_Click);
             // 
-            // button50
+            // buttonTwo
             // 
-            this->button50->AutoEllipsis = true;
-            this->button50->BackColor = System::Drawing::Color::White;
-            this->button50->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button50->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonTwo->AutoEllipsis = true;
+            this->buttonTwo->BackColor = System::Drawing::Color::White;
+            this->buttonTwo->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->buttonTwo->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button50->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button50->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonTwo->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->buttonTwo->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button50->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button50->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->buttonTwo->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->buttonTwo->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button50->Location = System::Drawing::Point(77, 197);
-            this->button50->Name = L"button50";
-            this->button50->Size = System::Drawing::Size(68, 91);
-            this->button50->TabIndex = 15;
-            this->button50->Text = L"1";
-            this->button50->UseCompatibleTextRendering = true;
-            this->button50->UseVisualStyleBackColor = true;
+            this->buttonTwo->Location = System::Drawing::Point(151, 197);
+            this->buttonTwo->Name = L"buttonTwo";
+            this->buttonTwo->Size = System::Drawing::Size(68, 91);
+            this->buttonTwo->TabIndex = 16;
+            this->buttonTwo->Text = L"2";
+            this->buttonTwo->UseCompatibleTextRendering = true;
+            this->buttonTwo->UseVisualStyleBackColor = true;
+            this->buttonTwo->Click += gcnew System::EventHandler(this, &MyForm::buttonTwo_Click);
             // 
-            // button49
+            // buttonOne
             // 
-            this->button49->AutoEllipsis = true;
-            this->button49->BackColor = System::Drawing::Color::White;
-            this->button49->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button49->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonOne->AutoEllipsis = true;
+            this->buttonOne->BackColor = System::Drawing::Color::White;
+            this->buttonOne->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->buttonOne->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button49->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button49->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonOne->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->buttonOne->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button49->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button49->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->buttonOne->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->buttonOne->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button49->Location = System::Drawing::Point(3, 197);
-            this->button49->Name = L"button49";
-            this->button49->Size = System::Drawing::Size(68, 91);
-            this->button49->TabIndex = 11;
-            this->button49->Text = L"%";
-            this->button49->UseCompatibleTextRendering = true;
-            this->button49->UseVisualStyleBackColor = true;
+            this->buttonOne->Location = System::Drawing::Point(77, 197);
+            this->buttonOne->Name = L"buttonOne";
+            this->buttonOne->Size = System::Drawing::Size(68, 91);
+            this->buttonOne->TabIndex = 15;
+            this->buttonOne->Text = L"1";
+            this->buttonOne->UseCompatibleTextRendering = true;
+            this->buttonOne->UseVisualStyleBackColor = true;
+            this->buttonOne->Click += gcnew System::EventHandler(this, &MyForm::buttonOne_Click);
             // 
-            // button48
+            // btnC
             // 
-            this->button48->AutoEllipsis = true;
-            this->button48->BackColor = System::Drawing::Color::White;
-            this->button48->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button48->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnC->AutoEllipsis = true;
+            this->btnC->BackColor = System::Drawing::Color::White;
+            this->btnC->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnC->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button48->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button48->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnC->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnC->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button48->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button48->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnC->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnC->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button48->Location = System::Drawing::Point(151, 294);
-            this->button48->Name = L"button48";
-            this->button48->Size = System::Drawing::Size(68, 94);
-            this->button48->TabIndex = 14;
-            this->button48->Text = L"%";
-            this->button48->UseCompatibleTextRendering = true;
-            this->button48->UseVisualStyleBackColor = true;
+            this->btnC->Location = System::Drawing::Point(3, 197);
+            this->btnC->Name = L"btnC";
+            this->btnC->Size = System::Drawing::Size(68, 91);
+            this->btnC->TabIndex = 11;
+            this->btnC->Text = L"C";
+            this->btnC->UseCompatibleTextRendering = true;
+            this->btnC->UseVisualStyleBackColor = true;
+            this->btnC->Click += gcnew System::EventHandler(this, &MyForm::btnC_Click);
             // 
-            // button47
+            // btnSix
             // 
-            this->button47->AutoEllipsis = true;
-            this->button47->BackColor = System::Drawing::Color::White;
-            this->button47->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button47->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnSix->AutoEllipsis = true;
+            this->btnSix->BackColor = System::Drawing::Color::White;
+            this->btnSix->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnSix->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button47->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button47->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnSix->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnSix->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button47->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button47->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnSix->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnSix->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button47->Location = System::Drawing::Point(77, 294);
-            this->button47->Name = L"button47";
-            this->button47->Size = System::Drawing::Size(68, 94);
-            this->button47->TabIndex = 13;
-            this->button47->Text = L"%";
-            this->button47->UseCompatibleTextRendering = true;
-            this->button47->UseVisualStyleBackColor = true;
+            this->btnSix->Location = System::Drawing::Point(225, 100);
+            this->btnSix->Name = L"btnSix";
+            this->btnSix->Size = System::Drawing::Size(68, 91);
+            this->btnSix->TabIndex = 10;
+            this->btnSix->Text = L"6";
+            this->btnSix->UseCompatibleTextRendering = true;
+            this->btnSix->UseVisualStyleBackColor = true;
+            this->btnSix->Click += gcnew System::EventHandler(this, &MyForm::btnSix_Click);
             // 
-            // button46
+            // buttonNine
             // 
-            this->button46->AutoEllipsis = true;
-            this->button46->BackColor = System::Drawing::Color::White;
-            this->button46->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button46->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonNine->AutoEllipsis = true;
+            this->buttonNine->BackColor = System::Drawing::Color::White;
+            this->buttonNine->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->buttonNine->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button46->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button46->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonNine->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->buttonNine->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button46->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button46->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->buttonNine->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->buttonNine->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button46->Location = System::Drawing::Point(225, 294);
-            this->button46->Name = L"button46";
-            this->button46->Size = System::Drawing::Size(68, 94);
-            this->button46->TabIndex = 12;
-            this->button46->Text = L"%";
-            this->button46->UseCompatibleTextRendering = true;
-            this->button46->UseVisualStyleBackColor = true;
+            this->buttonNine->Location = System::Drawing::Point(225, 3);
+            this->buttonNine->Name = L"buttonNine";
+            this->buttonNine->Size = System::Drawing::Size(68, 91);
+            this->buttonNine->TabIndex = 6;
+            this->buttonNine->Text = L"9";
+            this->buttonNine->UseCompatibleTextRendering = true;
+            this->buttonNine->UseVisualStyleBackColor = true;
+            this->buttonNine->Click += gcnew System::EventHandler(this, &MyForm::buttonNine_Click);
             // 
-            // button45
+            // buttonEight
             // 
-            this->button45->AutoEllipsis = true;
-            this->button45->BackColor = System::Drawing::Color::White;
-            this->button45->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button45->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonEight->AutoEllipsis = true;
+            this->buttonEight->BackColor = System::Drawing::Color::White;
+            this->buttonEight->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->buttonEight->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button45->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button45->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonEight->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->buttonEight->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button45->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button45->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->buttonEight->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->buttonEight->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button45->Location = System::Drawing::Point(299, 294);
-            this->button45->Name = L"button45";
-            this->button45->Size = System::Drawing::Size(71, 94);
-            this->button45->TabIndex = 11;
-            this->button45->Text = L"%";
-            this->button45->UseCompatibleTextRendering = true;
-            this->button45->UseVisualStyleBackColor = true;
+            this->buttonEight->Location = System::Drawing::Point(151, 3);
+            this->buttonEight->Name = L"buttonEight";
+            this->buttonEight->Size = System::Drawing::Size(68, 91);
+            this->buttonEight->TabIndex = 6;
+            this->buttonEight->Text = L"8";
+            this->buttonEight->UseCompatibleTextRendering = true;
+            this->buttonEight->UseVisualStyleBackColor = true;
+            this->buttonEight->Click += gcnew System::EventHandler(this, &MyForm::buttonEight_Click);
             // 
-            // button44
+            // btnA
             // 
-            this->button44->AutoEllipsis = true;
-            this->button44->BackColor = System::Drawing::Color::White;
-            this->button44->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button44->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnA->AutoEllipsis = true;
+            this->btnA->BackColor = System::Drawing::Color::White;
+            this->btnA->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnA->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button44->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button44->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnA->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnA->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button44->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button44->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnA->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnA->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button44->Location = System::Drawing::Point(225, 100);
-            this->button44->Name = L"button44";
-            this->button44->Size = System::Drawing::Size(68, 91);
-            this->button44->TabIndex = 10;
-            this->button44->Text = L"%";
-            this->button44->UseCompatibleTextRendering = true;
-            this->button44->UseVisualStyleBackColor = true;
+            this->btnA->Location = System::Drawing::Point(3, 3);
+            this->btnA->Name = L"btnA";
+            this->btnA->Size = System::Drawing::Size(68, 91);
+            this->btnA->TabIndex = 4;
+            this->btnA->Text = L"A";
+            this->btnA->UseCompatibleTextRendering = true;
+            this->btnA->UseVisualStyleBackColor = true;
+            this->btnA->Click += gcnew System::EventHandler(this, &MyForm::btnA_Click);
             // 
-            // button42
+            // btnB
             // 
-            this->button42->AutoEllipsis = true;
-            this->button42->BackColor = System::Drawing::Color::White;
-            this->button42->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button42->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnB->AutoEllipsis = true;
+            this->btnB->BackColor = System::Drawing::Color::White;
+            this->btnB->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnB->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button42->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button42->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnB->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnB->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button42->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button42->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnB->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnB->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button42->Location = System::Drawing::Point(225, 3);
-            this->button42->Name = L"button42";
-            this->button42->Size = System::Drawing::Size(68, 91);
-            this->button42->TabIndex = 6;
-            this->button42->Text = L"%";
-            this->button42->UseCompatibleTextRendering = true;
-            this->button42->UseVisualStyleBackColor = true;
+            this->btnB->Location = System::Drawing::Point(3, 100);
+            this->btnB->Name = L"btnB";
+            this->btnB->Size = System::Drawing::Size(68, 91);
+            this->btnB->TabIndex = 5;
+            this->btnB->Text = L"B";
+            this->btnB->UseCompatibleTextRendering = true;
+            this->btnB->UseVisualStyleBackColor = true;
+            this->btnB->Click += gcnew System::EventHandler(this, &MyForm::btnB_Click);
             // 
-            // button41
+            // btnSeven
             // 
-            this->button41->AutoEllipsis = true;
-            this->button41->BackColor = System::Drawing::Color::White;
-            this->button41->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button41->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnSeven->AutoEllipsis = true;
+            this->btnSeven->BackColor = System::Drawing::Color::White;
+            this->btnSeven->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnSeven->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button41->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button41->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnSeven->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnSeven->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button41->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button41->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnSeven->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnSeven->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button41->Location = System::Drawing::Point(151, 3);
-            this->button41->Name = L"button41";
-            this->button41->Size = System::Drawing::Size(68, 91);
-            this->button41->TabIndex = 6;
-            this->button41->Text = L"%";
-            this->button41->UseCompatibleTextRendering = true;
-            this->button41->UseVisualStyleBackColor = true;
+            this->btnSeven->Location = System::Drawing::Point(77, 3);
+            this->btnSeven->Name = L"btnSeven";
+            this->btnSeven->Size = System::Drawing::Size(68, 91);
+            this->btnSeven->TabIndex = 4;
+            this->btnSeven->Text = L"7";
+            this->btnSeven->UseCompatibleTextRendering = true;
+            this->btnSeven->UseVisualStyleBackColor = true;
+            this->btnSeven->Click += gcnew System::EventHandler(this, &MyForm::btnSeven_Click);
             // 
-            // button40
+            // btnFive
             // 
-            this->button40->AutoEllipsis = true;
-            this->button40->BackColor = System::Drawing::Color::White;
-            this->button40->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button40->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnFive->AutoEllipsis = true;
+            this->btnFive->BackColor = System::Drawing::Color::White;
+            this->btnFive->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnFive->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button40->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button40->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnFive->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnFive->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button40->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button40->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnFive->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnFive->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button40->Location = System::Drawing::Point(3, 3);
-            this->button40->Name = L"button40";
-            this->button40->Size = System::Drawing::Size(68, 91);
-            this->button40->TabIndex = 4;
-            this->button40->Text = L"%";
-            this->button40->UseCompatibleTextRendering = true;
-            this->button40->UseVisualStyleBackColor = true;
-            // 
-            // button39
-            // 
-            this->button39->AutoEllipsis = true;
-            this->button39->BackColor = System::Drawing::Color::White;
-            this->button39->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button39->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button39->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button39->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button39->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button39->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->button39->Location = System::Drawing::Point(77, 100);
-            this->button39->Name = L"button39";
-            this->button39->Size = System::Drawing::Size(68, 91);
-            this->button39->TabIndex = 8;
-            this->button39->Text = L"4";
-            this->button39->UseCompatibleTextRendering = true;
-            this->button39->UseVisualStyleBackColor = true;
-            // 
-            // button38
-            // 
-            this->button38->AutoEllipsis = true;
-            this->button38->BackColor = System::Drawing::Color::White;
-            this->button38->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button38->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button38->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button38->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button38->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button38->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->button38->Location = System::Drawing::Point(3, 100);
-            this->button38->Name = L"button38";
-            this->button38->Size = System::Drawing::Size(68, 91);
-            this->button38->TabIndex = 5;
-            this->button38->Text = L"%";
-            this->button38->UseCompatibleTextRendering = true;
-            this->button38->UseVisualStyleBackColor = true;
-            // 
-            // button37
-            // 
-            this->button37->AutoEllipsis = true;
-            this->button37->BackColor = System::Drawing::Color::White;
-            this->button37->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button37->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button37->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button37->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button37->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button37->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->button37->Location = System::Drawing::Point(77, 3);
-            this->button37->Name = L"button37";
-            this->button37->Size = System::Drawing::Size(68, 91);
-            this->button37->TabIndex = 4;
-            this->button37->Text = L"%";
-            this->button37->UseCompatibleTextRendering = true;
-            this->button37->UseVisualStyleBackColor = true;
-            // 
-            // button43
-            // 
-            this->button43->AutoEllipsis = true;
-            this->button43->BackColor = System::Drawing::Color::White;
-            this->button43->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button43->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button43->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button43->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
-                static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button43->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button43->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
-                static_cast<System::Byte>(0)));
-            this->button43->Location = System::Drawing::Point(151, 100);
-            this->button43->Name = L"button43";
-            this->button43->Size = System::Drawing::Size(68, 91);
-            this->button43->TabIndex = 9;
-            this->button43->Text = L"5";
-            this->button43->UseCompatibleTextRendering = true;
-            this->button43->UseVisualStyleBackColor = true;
+            this->btnFive->Location = System::Drawing::Point(151, 100);
+            this->btnFive->Name = L"btnFive";
+            this->btnFive->Size = System::Drawing::Size(68, 91);
+            this->btnFive->TabIndex = 9;
+            this->btnFive->Text = L"5";
+            this->btnFive->UseCompatibleTextRendering = true;
+            this->btnFive->UseVisualStyleBackColor = true;
+            this->btnFive->Click += gcnew System::EventHandler(this, &MyForm::btnFive_Click);
             // 
             // panel4
             // 
-            this->panel4->Controls->Add(this->label6);
-            this->panel4->Controls->Add(this->label5);
+            this->panel4->Controls->Add(this->lblResultValue);
+            this->panel4->Controls->Add(this->lblFrom);
             this->panel4->Controls->Add(this->label2);
             this->panel4->Controls->Add(this->comboBox2);
             this->panel4->Controls->Add(this->label1);
@@ -860,33 +817,31 @@ private: System::Windows::Forms::Button^ button26;
             this->panel4->Size = System::Drawing::Size(373, 170);
             this->panel4->TabIndex = 1;
             // 
-            // label6
+            // lblResultValue
             // 
-            this->label6->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+            this->lblResultValue->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
                 | System::Windows::Forms::AnchorStyles::Right));
-            this->label6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblResultValue->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label6->ForeColor = System::Drawing::Color::Black;
-            this->label6->Location = System::Drawing::Point(2, 51);
-            this->label6->Name = L"label6";
-            this->label6->Size = System::Drawing::Size(368, 34);
-            this->label6->TabIndex = 7;
-            this->label6->Text = L"0";
-            this->label6->TextAlign = System::Drawing::ContentAlignment::BottomRight;
+            this->lblResultValue->ForeColor = System::Drawing::Color::Black;
+            this->lblResultValue->Location = System::Drawing::Point(2, 49);
+            this->lblResultValue->Name = L"lblResultValue";
+            this->lblResultValue->Size = System::Drawing::Size(368, 30);
+            this->lblResultValue->TabIndex = 7;
+            this->lblResultValue->TextAlign = System::Drawing::ContentAlignment::BottomRight;
             // 
-            // label5
+            // lblFrom
             // 
-            this->label5->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
+            this->lblFrom->Anchor = static_cast<System::Windows::Forms::AnchorStyles>(((System::Windows::Forms::AnchorStyles::Top | System::Windows::Forms::AnchorStyles::Left)
                 | System::Windows::Forms::AnchorStyles::Right));
-            this->label5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->lblFrom->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->label5->ForeColor = System::Drawing::Color::Black;
-            this->label5->Location = System::Drawing::Point(0, 0);
-            this->label5->Name = L"label5";
-            this->label5->Size = System::Drawing::Size(370, 40);
-            this->label5->TabIndex = 6;
-            this->label5->Text = L"0";
-            this->label5->TextAlign = System::Drawing::ContentAlignment::BottomRight;
+            this->lblFrom->ForeColor = System::Drawing::Color::Black;
+            this->lblFrom->Location = System::Drawing::Point(-1, 0);
+            this->lblFrom->Name = L"lblFrom";
+            this->lblFrom->Size = System::Drawing::Size(370, 40);
+            this->lblFrom->TabIndex = 6;
+            this->lblFrom->TextAlign = System::Drawing::ContentAlignment::BottomRight;
             // 
             // label2
             // 
@@ -913,6 +868,7 @@ private: System::Windows::Forms::Button^ button26;
             this->comboBox2->Name = L"comboBox2";
             this->comboBox2->Size = System::Drawing::Size(304, 24);
             this->comboBox2->TabIndex = 4;
+            this->comboBox2->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox2_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -939,6 +895,7 @@ private: System::Windows::Forms::Button^ button26;
             this->comboBox1->Name = L"comboBox1";
             this->comboBox1->Size = System::Drawing::Size(304, 24);
             this->comboBox1->TabIndex = 2;
+            this->comboBox1->SelectedIndexChanged += gcnew System::EventHandler(this, &MyForm::comboBox1_SelectedIndexChanged);
             // 
             // tabPage4
             // 
@@ -947,7 +904,7 @@ private: System::Windows::Forms::Button^ button26;
             this->tabPage4->Location = System::Drawing::Point(4, 22);
             this->tabPage4->Name = L"tabPage4";
             this->tabPage4->Padding = System::Windows::Forms::Padding(3);
-            this->tabPage4->Size = System::Drawing::Size(379, 567);
+            this->tabPage4->Size = System::Drawing::Size(392, 580);
             this->tabPage4->TabIndex = 1;
             this->tabPage4->Text = L"Calculator";
             this->tabPage4->UseVisualStyleBackColor = true;
@@ -972,9 +929,9 @@ private: System::Windows::Forms::Button^ button26;
             this->panel1->Controls->Add(this->button2);
             this->panel1->Controls->Add(this->button1);
             this->panel1->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->panel1->Location = System::Drawing::Point(3, 163);
+            this->panel1->Location = System::Drawing::Point(3, 157);
             this->panel1->Name = L"panel1";
-            this->panel1->Size = System::Drawing::Size(373, 401);
+            this->panel1->Size = System::Drawing::Size(386, 420);
             this->panel1->TabIndex = 1;
             // 
             // panel3
@@ -983,7 +940,7 @@ private: System::Windows::Forms::Button^ button26;
             this->panel3->Dock = System::Windows::Forms::DockStyle::Fill;
             this->panel3->Location = System::Drawing::Point(0, 0);
             this->panel3->Name = L"panel3";
-            this->panel3->Size = System::Drawing::Size(373, 401);
+            this->panel3->Size = System::Drawing::Size(386, 420);
             this->panel3->TabIndex = 16;
             // 
             // tableLayoutPanel2
@@ -1006,7 +963,7 @@ private: System::Windows::Forms::Button^ button26;
             this->tableLayoutPanel2->Controls->Add(this->btnEquals, 4, 5);
             this->tableLayoutPanel2->Controls->Add(this->btn4, 1, 3);
             this->tableLayoutPanel2->Controls->Add(this->btnPow, 4, 1);
-            this->tableLayoutPanel2->Controls->Add(this->button20, 3, 1);
+            this->tableLayoutPanel2->Controls->Add(this->buttonLn, 3, 1);
             this->tableLayoutPanel2->Controls->Add(this->btnRadical, 2, 1);
             this->tableLayoutPanel2->Controls->Add(this->buttonTan, 1, 1);
             this->tableLayoutPanel2->Controls->Add(this->btnBack, 4, 0);
@@ -1026,7 +983,7 @@ private: System::Windows::Forms::Button^ button26;
             this->tableLayoutPanel2->Controls->Add(this->btn9, 3, 2);
             this->tableLayoutPanel2->Controls->Add(this->btn8, 2, 2);
             this->tableLayoutPanel2->Controls->Add(this->btnSin, 0, 2);
-            this->tableLayoutPanel2->Controls->Add(this->btn10pow, 0, 3);
+            this->tableLayoutPanel2->Controls->Add(this->btnLogBase2, 0, 3);
             this->tableLayoutPanel2->Controls->Add(this->btn7, 1, 2);
             this->tableLayoutPanel2->Controls->Add(this->btn5, 2, 3);
             this->tableLayoutPanel2->Dock = System::Windows::Forms::DockStyle::Fill;
@@ -1039,7 +996,7 @@ private: System::Windows::Forms::Button^ button26;
             this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 16.66667F)));
             this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 16.66667F)));
             this->tableLayoutPanel2->RowStyles->Add((gcnew System::Windows::Forms::RowStyle(System::Windows::Forms::SizeType::Percent, 16.66667F)));
-            this->tableLayoutPanel2->Size = System::Drawing::Size(373, 401);
+            this->tableLayoutPanel2->Size = System::Drawing::Size(386, 420);
             this->tableLayoutPanel2->TabIndex = 3;
             // 
             // btnDot
@@ -1055,9 +1012,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnDot->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnDot->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnDot->Location = System::Drawing::Point(77, 333);
+            this->btnDot->Location = System::Drawing::Point(80, 353);
             this->btnDot->Name = L"btnDot";
-            this->btnDot->Size = System::Drawing::Size(68, 65);
+            this->btnDot->Size = System::Drawing::Size(71, 64);
             this->btnDot->TabIndex = 36;
             this->btnDot->Text = L".";
             this->btnDot->UseCompatibleTextRendering = true;
@@ -1076,9 +1033,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnDivison->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnDivison->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnDivison->Location = System::Drawing::Point(225, 333);
+            this->btnDivison->Location = System::Drawing::Point(234, 353);
             this->btnDivison->Name = L"btnDivison";
-            this->btnDivison->Size = System::Drawing::Size(68, 65);
+            this->btnDivison->Size = System::Drawing::Size(71, 64);
             this->btnDivison->TabIndex = 35;
             this->btnDivison->Text = L"/";
             this->btnDivison->UseCompatibleTextRendering = true;
@@ -1097,13 +1054,14 @@ private: System::Windows::Forms::Button^ button26;
             this->btn0->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn0->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn0->Location = System::Drawing::Point(151, 333);
+            this->btn0->Location = System::Drawing::Point(157, 353);
             this->btn0->Name = L"btn0";
-            this->btn0->Size = System::Drawing::Size(68, 65);
+            this->btn0->Size = System::Drawing::Size(71, 64);
             this->btn0->TabIndex = 34;
             this->btn0->Text = L"0";
             this->btn0->UseCompatibleTextRendering = true;
             this->btn0->UseVisualStyleBackColor = true;
+            this->btn0->Click += gcnew System::EventHandler(this, &MyForm::btn0_Click_1);
             // 
             // buttonCos
             // 
@@ -1118,9 +1076,9 @@ private: System::Windows::Forms::Button^ button26;
             this->buttonCos->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->buttonCos->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->buttonCos->Location = System::Drawing::Point(3, 69);
+            this->buttonCos->Location = System::Drawing::Point(3, 73);
             this->buttonCos->Name = L"buttonCos";
-            this->buttonCos->Size = System::Drawing::Size(68, 60);
+            this->buttonCos->Size = System::Drawing::Size(71, 64);
             this->buttonCos->TabIndex = 31;
             this->buttonCos->Text = L"cos";
             this->buttonCos->UseCompatibleTextRendering = true;
@@ -1140,9 +1098,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnEquals->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnEquals->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnEquals->Location = System::Drawing::Point(299, 333);
+            this->btnEquals->Location = System::Drawing::Point(311, 353);
             this->btnEquals->Name = L"btnEquals";
-            this->btnEquals->Size = System::Drawing::Size(71, 65);
+            this->btnEquals->Size = System::Drawing::Size(72, 64);
             this->btnEquals->TabIndex = 29;
             this->btnEquals->Text = L"=";
             this->btnEquals->UseCompatibleTextRendering = true;
@@ -1162,13 +1120,14 @@ private: System::Windows::Forms::Button^ button26;
             this->btn4->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn4->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn4->Location = System::Drawing::Point(77, 201);
+            this->btn4->Location = System::Drawing::Point(80, 213);
             this->btn4->Name = L"btn4";
-            this->btn4->Size = System::Drawing::Size(68, 60);
+            this->btn4->Size = System::Drawing::Size(71, 64);
             this->btn4->TabIndex = 28;
             this->btn4->Text = L"4";
             this->btn4->UseCompatibleTextRendering = true;
             this->btn4->UseVisualStyleBackColor = true;
+            this->btn4->Click += gcnew System::EventHandler(this, &MyForm::btn4_Click);
             // 
             // btnPow
             // 
@@ -1183,35 +1142,36 @@ private: System::Windows::Forms::Button^ button26;
             this->btnPow->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnPow->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnPow->Location = System::Drawing::Point(299, 69);
+            this->btnPow->Location = System::Drawing::Point(311, 73);
             this->btnPow->Name = L"btnPow";
-            this->btnPow->Size = System::Drawing::Size(71, 60);
+            this->btnPow->Size = System::Drawing::Size(72, 64);
             this->btnPow->TabIndex = 27;
             this->btnPow->Text = L"^";
             this->btnPow->UseCompatibleTextRendering = true;
             this->btnPow->UseVisualStyleBackColor = true;
             this->btnPow->Click += gcnew System::EventHandler(this, &MyForm::btnPow_Click);
             // 
-            // button20
+            // buttonLn
             // 
-            this->button20->AutoEllipsis = true;
-            this->button20->BackColor = System::Drawing::Color::White;
-            this->button20->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->button20->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonLn->AutoEllipsis = true;
+            this->buttonLn->BackColor = System::Drawing::Color::White;
+            this->buttonLn->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->buttonLn->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button20->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->button20->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->buttonLn->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->buttonLn->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->button20->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->button20->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->buttonLn->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->buttonLn->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button20->Location = System::Drawing::Point(225, 69);
-            this->button20->Name = L"button20";
-            this->button20->Size = System::Drawing::Size(68, 60);
-            this->button20->TabIndex = 26;
-            this->button20->Text = L"0";
-            this->button20->UseCompatibleTextRendering = true;
-            this->button20->UseVisualStyleBackColor = true;
+            this->buttonLn->Location = System::Drawing::Point(234, 73);
+            this->buttonLn->Name = L"buttonLn";
+            this->buttonLn->Size = System::Drawing::Size(71, 64);
+            this->buttonLn->TabIndex = 26;
+            this->buttonLn->Text = L"ln";
+            this->buttonLn->UseCompatibleTextRendering = true;
+            this->buttonLn->UseVisualStyleBackColor = true;
+            this->buttonLn->Click += gcnew System::EventHandler(this, &MyForm::buttonLn_Click);
             // 
             // btnRadical
             // 
@@ -1226,9 +1186,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnRadical->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnRadical->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnRadical->Location = System::Drawing::Point(151, 69);
+            this->btnRadical->Location = System::Drawing::Point(157, 73);
             this->btnRadical->Name = L"btnRadical";
-            this->btnRadical->Size = System::Drawing::Size(68, 60);
+            this->btnRadical->Size = System::Drawing::Size(71, 64);
             this->btnRadical->TabIndex = 25;
             this->btnRadical->Text = L"√";
             this->btnRadical->UseCompatibleTextRendering = true;
@@ -1248,9 +1208,9 @@ private: System::Windows::Forms::Button^ button26;
             this->buttonTan->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->buttonTan->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->buttonTan->Location = System::Drawing::Point(77, 69);
+            this->buttonTan->Location = System::Drawing::Point(80, 73);
             this->buttonTan->Name = L"buttonTan";
-            this->buttonTan->Size = System::Drawing::Size(68, 60);
+            this->buttonTan->Size = System::Drawing::Size(71, 64);
             this->buttonTan->TabIndex = 24;
             this->buttonTan->Text = L"tan";
             this->buttonTan->UseCompatibleTextRendering = true;
@@ -1270,9 +1230,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnBack->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnBack->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnBack->Location = System::Drawing::Point(299, 3);
+            this->btnBack->Location = System::Drawing::Point(311, 3);
             this->btnBack->Name = L"btnBack";
-            this->btnBack->Size = System::Drawing::Size(71, 60);
+            this->btnBack->Size = System::Drawing::Size(72, 64);
             this->btnBack->TabIndex = 22;
             this->btnBack->Text = L"<-";
             this->btnBack->UseCompatibleTextRendering = true;
@@ -1292,9 +1252,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnClear->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnClear->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnClear->Location = System::Drawing::Point(225, 3);
+            this->btnClear->Location = System::Drawing::Point(234, 3);
             this->btnClear->Name = L"btnClear";
-            this->btnClear->Size = System::Drawing::Size(68, 60);
+            this->btnClear->Size = System::Drawing::Size(71, 64);
             this->btnClear->TabIndex = 21;
             this->btnClear->Text = L"CL";
             this->btnClear->UseCompatibleTextRendering = true;
@@ -1314,9 +1274,9 @@ private: System::Windows::Forms::Button^ button26;
             this->rightBracket->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->rightBracket->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->rightBracket->Location = System::Drawing::Point(151, 3);
+            this->rightBracket->Location = System::Drawing::Point(157, 3);
             this->rightBracket->Name = L"rightBracket";
-            this->rightBracket->Size = System::Drawing::Size(68, 60);
+            this->rightBracket->Size = System::Drawing::Size(71, 64);
             this->rightBracket->TabIndex = 20;
             this->rightBracket->Text = L")";
             this->rightBracket->UseCompatibleTextRendering = true;
@@ -1336,9 +1296,9 @@ private: System::Windows::Forms::Button^ button26;
             this->lftBracket->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->lftBracket->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->lftBracket->Location = System::Drawing::Point(77, 3);
+            this->lftBracket->Location = System::Drawing::Point(80, 3);
             this->lftBracket->Name = L"lftBracket";
-            this->lftBracket->Size = System::Drawing::Size(68, 60);
+            this->lftBracket->Size = System::Drawing::Size(71, 64);
             this->lftBracket->TabIndex = 19;
             this->lftBracket->Text = L"(";
             this->lftBracket->UseCompatibleTextRendering = true;
@@ -1360,7 +1320,7 @@ private: System::Windows::Forms::Button^ button26;
                 static_cast<System::Byte>(0)));
             this->buttonPi->Location = System::Drawing::Point(3, 3);
             this->buttonPi->Name = L"buttonPi";
-            this->buttonPi->Size = System::Drawing::Size(68, 60);
+            this->buttonPi->Size = System::Drawing::Size(71, 64);
             this->buttonPi->TabIndex = 7;
             this->buttonPi->Text = L"PI";
             this->buttonPi->UseCompatibleTextRendering = true;
@@ -1380,9 +1340,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnPlus->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnPlus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnPlus->Location = System::Drawing::Point(299, 267);
+            this->btnPlus->Location = System::Drawing::Point(311, 283);
             this->btnPlus->Name = L"btnPlus";
-            this->btnPlus->Size = System::Drawing::Size(71, 60);
+            this->btnPlus->Size = System::Drawing::Size(72, 64);
             this->btnPlus->TabIndex = 7;
             this->btnPlus->Text = L"+";
             this->btnPlus->UseCompatibleTextRendering = true;
@@ -1402,9 +1362,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnMinus->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnMinus->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnMinus->Location = System::Drawing::Point(299, 201);
+            this->btnMinus->Location = System::Drawing::Point(311, 213);
             this->btnMinus->Name = L"btnMinus";
-            this->btnMinus->Size = System::Drawing::Size(71, 60);
+            this->btnMinus->Size = System::Drawing::Size(72, 64);
             this->btnMinus->TabIndex = 7;
             this->btnMinus->Text = L"-";
             this->btnMinus->UseCompatibleTextRendering = true;
@@ -1424,9 +1384,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btnMultiplication->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnMultiplication->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular,
                 System::Drawing::GraphicsUnit::Point, static_cast<System::Byte>(0)));
-            this->btnMultiplication->Location = System::Drawing::Point(299, 135);
+            this->btnMultiplication->Location = System::Drawing::Point(311, 143);
             this->btnMultiplication->Name = L"btnMultiplication";
-            this->btnMultiplication->Size = System::Drawing::Size(71, 60);
+            this->btnMultiplication->Size = System::Drawing::Size(72, 64);
             this->btnMultiplication->TabIndex = 7;
             this->btnMultiplication->Text = L"*";
             this->btnMultiplication->UseCompatibleTextRendering = true;
@@ -1446,9 +1406,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn3->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn3->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn3->Location = System::Drawing::Point(225, 267);
+            this->btn3->Location = System::Drawing::Point(234, 283);
             this->btn3->Name = L"btn3";
-            this->btn3->Size = System::Drawing::Size(68, 60);
+            this->btn3->Size = System::Drawing::Size(71, 64);
             this->btn3->TabIndex = 17;
             this->btn3->Text = L"3";
             this->btn3->UseCompatibleTextRendering = true;
@@ -1468,9 +1428,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn2->Location = System::Drawing::Point(151, 267);
+            this->btn2->Location = System::Drawing::Point(157, 283);
             this->btn2->Name = L"btn2";
-            this->btn2->Size = System::Drawing::Size(68, 60);
+            this->btn2->Size = System::Drawing::Size(71, 64);
             this->btn2->TabIndex = 16;
             this->btn2->Text = L"2";
             this->btn2->UseCompatibleTextRendering = true;
@@ -1490,9 +1450,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn1->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn1->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn1->Location = System::Drawing::Point(77, 267);
+            this->btn1->Location = System::Drawing::Point(80, 283);
             this->btn1->Name = L"btn1";
-            this->btn1->Size = System::Drawing::Size(68, 60);
+            this->btn1->Size = System::Drawing::Size(71, 64);
             this->btn1->TabIndex = 15;
             this->btn1->Text = L"1";
             this->btn1->UseCompatibleTextRendering = true;
@@ -1512,11 +1472,11 @@ private: System::Windows::Forms::Button^ button26;
             this->btnLog->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnLog->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnLog->Location = System::Drawing::Point(3, 267);
+            this->btnLog->Location = System::Drawing::Point(3, 283);
             this->btnLog->Name = L"btnLog";
-            this->btnLog->Size = System::Drawing::Size(68, 60);
+            this->btnLog->Size = System::Drawing::Size(71, 64);
             this->btnLog->TabIndex = 11;
-            this->btnLog->Text = L"log";
+            this->btnLog->Text = L"log₁₀(x)";
             this->btnLog->UseCompatibleTextRendering = true;
             this->btnLog->UseVisualStyleBackColor = true;
             this->btnLog->Click += gcnew System::EventHandler(this, &MyForm::btnLog_Click);
@@ -1534,13 +1494,14 @@ private: System::Windows::Forms::Button^ button26;
             this->button26->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->button26->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->button26->Location = System::Drawing::Point(3, 333);
+            this->button26->Location = System::Drawing::Point(3, 353);
             this->button26->Name = L"button26";
-            this->button26->Size = System::Drawing::Size(68, 65);
+            this->button26->Size = System::Drawing::Size(71, 64);
             this->button26->TabIndex = 13;
-            this->button26->Text = L"+/-";
+            this->button26->Text = L"e";
             this->button26->UseCompatibleTextRendering = true;
             this->button26->UseVisualStyleBackColor = true;
+            this->button26->Click += gcnew System::EventHandler(this, &MyForm::button26_Click);
             // 
             // btn6
             // 
@@ -1555,9 +1516,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn6->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn6->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn6->Location = System::Drawing::Point(225, 201);
+            this->btn6->Location = System::Drawing::Point(234, 213);
             this->btn6->Name = L"btn6";
-            this->btn6->Size = System::Drawing::Size(68, 60);
+            this->btn6->Size = System::Drawing::Size(71, 64);
             this->btn6->TabIndex = 10;
             this->btn6->Text = L"6";
             this->btn6->UseCompatibleTextRendering = true;
@@ -1577,9 +1538,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn9->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn9->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn9->Location = System::Drawing::Point(225, 135);
+            this->btn9->Location = System::Drawing::Point(234, 143);
             this->btn9->Name = L"btn9";
-            this->btn9->Size = System::Drawing::Size(68, 60);
+            this->btn9->Size = System::Drawing::Size(71, 64);
             this->btn9->TabIndex = 6;
             this->btn9->Text = L"9";
             this->btn9->UseCompatibleTextRendering = true;
@@ -1599,9 +1560,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn8->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn8->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn8->Location = System::Drawing::Point(151, 135);
+            this->btn8->Location = System::Drawing::Point(157, 143);
             this->btn8->Name = L"btn8";
-            this->btn8->Size = System::Drawing::Size(68, 60);
+            this->btn8->Size = System::Drawing::Size(71, 64);
             this->btn8->TabIndex = 6;
             this->btn8->Text = L"8";
             this->btn8->UseCompatibleTextRendering = true;
@@ -1621,35 +1582,36 @@ private: System::Windows::Forms::Button^ button26;
             this->btnSin->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btnSin->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btnSin->Location = System::Drawing::Point(3, 135);
+            this->btnSin->Location = System::Drawing::Point(3, 143);
             this->btnSin->Name = L"btnSin";
-            this->btnSin->Size = System::Drawing::Size(68, 60);
+            this->btnSin->Size = System::Drawing::Size(71, 64);
             this->btnSin->TabIndex = 4;
             this->btnSin->Text = L"sin";
             this->btnSin->UseCompatibleTextRendering = true;
             this->btnSin->UseVisualStyleBackColor = true;
             this->btnSin->Click += gcnew System::EventHandler(this, &MyForm::btnSin_Click);
             // 
-            // btn10pow
+            // btnLogBase2
             // 
-            this->btn10pow->AutoEllipsis = true;
-            this->btn10pow->BackColor = System::Drawing::Color::White;
-            this->btn10pow->Dock = System::Windows::Forms::DockStyle::Fill;
-            this->btn10pow->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnLogBase2->AutoEllipsis = true;
+            this->btnLogBase2->BackColor = System::Drawing::Color::White;
+            this->btnLogBase2->Dock = System::Windows::Forms::DockStyle::Fill;
+            this->btnLogBase2->FlatAppearance->BorderColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->btn10pow->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
-            this->btn10pow->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
+            this->btnLogBase2->FlatAppearance->MouseDownBackColor = System::Drawing::SystemColors::Control;
+            this->btnLogBase2->FlatAppearance->MouseOverBackColor = System::Drawing::Color::FromArgb(static_cast<System::Int32>(static_cast<System::Byte>(224)),
                 static_cast<System::Int32>(static_cast<System::Byte>(224)), static_cast<System::Int32>(static_cast<System::Byte>(224)));
-            this->btn10pow->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
-            this->btn10pow->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
+            this->btnLogBase2->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnLogBase2->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn10pow->Location = System::Drawing::Point(3, 201);
-            this->btn10pow->Name = L"btn10pow";
-            this->btn10pow->Size = System::Drawing::Size(68, 60);
-            this->btn10pow->TabIndex = 5;
-            this->btn10pow->Text = L"10^x";
-            this->btn10pow->UseCompatibleTextRendering = true;
-            this->btn10pow->UseVisualStyleBackColor = true;
+            this->btnLogBase2->Location = System::Drawing::Point(3, 213);
+            this->btnLogBase2->Name = L"btnLogBase2";
+            this->btnLogBase2->Size = System::Drawing::Size(71, 64);
+            this->btnLogBase2->TabIndex = 5;
+            this->btnLogBase2->Text = L"log₂(x)";
+            this->btnLogBase2->UseCompatibleTextRendering = true;
+            this->btnLogBase2->UseVisualStyleBackColor = true;
+            this->btnLogBase2->Click += gcnew System::EventHandler(this, &MyForm::btnLogBase2_Click);
             // 
             // btn7
             // 
@@ -1664,9 +1626,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn7->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn7->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn7->Location = System::Drawing::Point(77, 135);
+            this->btn7->Location = System::Drawing::Point(80, 143);
             this->btn7->Name = L"btn7";
-            this->btn7->Size = System::Drawing::Size(68, 60);
+            this->btn7->Size = System::Drawing::Size(71, 64);
             this->btn7->TabIndex = 4;
             this->btn7->Text = L"7";
             this->btn7->UseCompatibleTextRendering = true;
@@ -1686,9 +1648,9 @@ private: System::Windows::Forms::Button^ button26;
             this->btn5->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
             this->btn5->Font = (gcnew System::Drawing::Font(L"Microsoft Sans Serif", 14.25F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point,
                 static_cast<System::Byte>(0)));
-            this->btn5->Location = System::Drawing::Point(151, 201);
+            this->btn5->Location = System::Drawing::Point(157, 213);
             this->btn5->Name = L"btn5";
-            this->btn5->Size = System::Drawing::Size(68, 60);
+            this->btn5->Size = System::Drawing::Size(71, 64);
             this->btn5->TabIndex = 9;
             this->btn5->Text = L"5";
             this->btn5->UseCompatibleTextRendering = true;
@@ -2017,13 +1979,25 @@ private: System::Windows::Forms::Button^ button26;
             // 
             // panel2
             // 
+            this->panel2->Controls->Add(this->btnRad);
             this->panel2->Controls->Add(this->lblResult);
             this->panel2->Controls->Add(this->lblDisplay);
             this->panel2->Dock = System::Windows::Forms::DockStyle::Top;
             this->panel2->Location = System::Drawing::Point(3, 3);
             this->panel2->Name = L"panel2";
-            this->panel2->Size = System::Drawing::Size(373, 160);
+            this->panel2->Size = System::Drawing::Size(386, 154);
             this->panel2->TabIndex = 0;
+            // 
+            // btnRad
+            // 
+            this->btnRad->FlatStyle = System::Windows::Forms::FlatStyle::Flat;
+            this->btnRad->Location = System::Drawing::Point(6, 109);
+            this->btnRad->Name = L"btnRad";
+            this->btnRad->Size = System::Drawing::Size(68, 42);
+            this->btnRad->TabIndex = 4;
+            this->btnRad->Text = L"Rad";
+            this->btnRad->UseVisualStyleBackColor = true;
+            this->btnRad->Click += gcnew System::EventHandler(this, &MyForm::btnRad_Click);
             // 
             // lblResult
             // 
@@ -2034,9 +2008,8 @@ private: System::Windows::Forms::Button^ button26;
             this->lblResult->ForeColor = System::Drawing::Color::Black;
             this->lblResult->Location = System::Drawing::Point(3, 43);
             this->lblResult->Name = L"lblResult";
-            this->lblResult->Size = System::Drawing::Size(368, 34);
+            this->lblResult->Size = System::Drawing::Size(381, 34);
             this->lblResult->TabIndex = 3;
-            this->lblResult->Text = L"12";
             this->lblResult->TextAlign = System::Drawing::ContentAlignment::BottomRight;
             this->lblResult->Click += gcnew System::EventHandler(this, &MyForm::lblResult_Click);
             // 
@@ -2049,14 +2022,13 @@ private: System::Windows::Forms::Button^ button26;
             this->lblDisplay->ForeColor = System::Drawing::Color::Gray;
             this->lblDisplay->Location = System::Drawing::Point(5, 0);
             this->lblDisplay->Name = L"lblDisplay";
-            this->lblDisplay->Size = System::Drawing::Size(368, 34);
+            this->lblDisplay->Size = System::Drawing::Size(378, 34);
             this->lblDisplay->TabIndex = 2;
-            this->lblDisplay->Text = L"4+8";
             this->lblDisplay->TextAlign = System::Drawing::ContentAlignment::BottomRight;
             // 
             // MyForm
             // 
-            this->ClientSize = System::Drawing::Size(387, 593);
+            this->ClientSize = System::Drawing::Size(400, 606);
             this->Controls->Add(this->tabControl2);
             this->Name = L"MyForm";
             this->tabControl1->ResumeLayout(false);
@@ -2100,7 +2072,7 @@ private: System::Void btnRadical_Click(System::Object^ sender, System::EventArgs
             lblDisplay->Text += L"*";
         }
     }
-    lblDisplay->Text += btnRadical->Text;
+    lblDisplay->Text += L"sqrt";
     lblDisplay->Text += L"(";
 }
 private: System::Void buttonPi_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2110,14 +2082,14 @@ private: System::Void buttonPi_Click(System::Object^ sender, System::EventArgs^ 
         }
     }
     
-    lblDisplay->Text += L"3.14159265359";
+    lblDisplay->Text += M_PI.ToString();
     
 }
 private: System::Void btnMultiplication_Click(System::Object^ sender, System::EventArgs^ e) {
 
 
     if (lblDisplay->Text->Length > 0) {
-        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == '(' || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
             lblDisplay->Text += btnMultiplication->Text;
 
         }
@@ -2146,7 +2118,7 @@ private: System::Void btn0_Click(System::Object^ sender, System::EventArgs^ e) {
 }
 private: System::Void btnPlus_Click(System::Object^ sender, System::EventArgs^ e) {
     if (lblDisplay->Text->Length > 0) {
-        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == '(' || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
 
             lblDisplay->Text += btnPlus->Text;
         }
@@ -2155,11 +2127,8 @@ private: System::Void btnPlus_Click(System::Object^ sender, System::EventArgs^ e
 
 }
 private: System::Void btnMinus_Click(System::Object^ sender, System::EventArgs^ e) {
-    if (lblDisplay->Text->Length > 0) {
-        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == '(' || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
-            lblDisplay->Text += btnMinus->Text;
-        }
-    }
+
+    lblDisplay->Text += btnMinus->Text;
 
 }
 private: System::Void btn5_Click(System::Object^ sender, System::EventArgs^ e) {
@@ -2173,7 +2142,7 @@ private: System::Void btnBack_Click(System::Object^ sender, System::EventArgs^ e
 }
 private: System::Void btnDivison_Click(System::Object^ sender, System::EventArgs^ e) {
     if (lblDisplay->Text->Length > 0) {
-        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9')|| lblDisplay->Text[lblDisplay->Text->Length - 1] == '(' || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
             lblDisplay->Text += btnDivison->Text;
 
         }
@@ -2191,15 +2160,20 @@ private: System::Void btnEquals_Click(System::Object^ sender, System::EventArgs^
     * in that case evaluation will note be done
     */
     if (!(lblDisplay->Text[lblDisplay->Text->Length - 1]<'0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1]=='(' || lblDisplay->Text[lblDisplay->Text->Length - 1]==')') {
-        //MessageBox::Show("Erroe","Wrrr",MessageBoxButtons::OK,MessageBoxIcon::Error);
         infixToPost i = infixToPost();
         Evapost ev = Evapost();
+
+        //to convert String ^ to standard string
+        //---------------------------------------
         msclr::interop::marshal_context context;
         std::string standardString = context.marshal_as<std::string>(lblDisplay->Text);
+        //---------------------------------------
         Utilite u = Utilite();
 
+
+        bool deg= (btnRad->Text == L"Deg")?true:false;
         if (u.areBracketsBalanced(standardString)) {
-            lblResult->Text = ev.Evaluate(i.toPost(standardString)).ToString();
+            lblResult->Text = ev.Evaluate(i.toPost(standardString),deg).ToString();
         }
     }
 }
@@ -2219,10 +2193,19 @@ private: System::Void btnDot_Click(System::Object^ sender, System::EventArgs^ e)
 }
 
 private: System::Void leftBarcket(System::Object^ sender, System::EventArgs^ e) {
+    if (lblDisplay->Text->Length > 0) {
+        if (lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0' && lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0'<='9') {
+            lblDisplay->Text += L"*";
+        }
+    }
     lblDisplay->Text += lftBracket->Text;
 }
 private: System::Void rightBracket_Click(System::Object^ sender, System::EventArgs^ e) {
-    lblDisplay->Text += rightBracket->Text;
+    if (lblDisplay->Text->Length > 0) {
+        if (lblDisplay->Text[lblDisplay->Text->Length - 1] != '(') {
+            lblDisplay->Text += rightBracket->Text;
+        }
+    }
 }
 private: System::Void btnSin_Click(System::Object^ sender, System::EventArgs^ e) {
     if (lblDisplay->Text->Length > 0) {
@@ -2255,14 +2238,242 @@ private: System::Void buttonTan_Click(System::Object^ sender, System::EventArgs^
 }
 private: System::Void btnPow_Click(System::Object^ sender, System::EventArgs^ e) {
     if (lblDisplay->Text->Length > 0) {
-        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == '(' || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+        if (!(lblDisplay->Text[lblDisplay->Text->Length - 1] < '0' || lblDisplay->Text[lblDisplay->Text->Length - 1] > '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
             lblDisplay->Text += btnPow->Text;
 
         }
     }
 }
 private: System::Void btnLog_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (lblDisplay->Text->Length > 0) {
+        if ((lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0' && lblDisplay->Text[lblDisplay->Text->Length - 1] <= '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+            lblDisplay->Text += L"*";
+        }
+    }
+    lblDisplay->Text += L"log10";
+    lblDisplay->Text += L"(";
+}
+private: System::Void btnLogBase2_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (lblDisplay->Text->Length > 0) {
+        if ((lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0' && lblDisplay->Text[lblDisplay->Text->Length - 1] <= '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+            lblDisplay->Text += L"*";
+        }
+    }
+    lblDisplay->Text += L"log2";
+    lblDisplay->Text += L"(";
+}
 
+private: System::Void btnRad_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (btnRad->Text == "Rad") {
+        btnRad->Text = L"Deg";
+    }
+    else {
+        btnRad->Text = L"Rad";
+    }
+}
+private: System::Void btn0_Click_1(System::Object^ sender, System::EventArgs^ e) {
+    lblDisplay->Text += btn0->Text;
+}
+private: System::Void buttonLn_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (lblDisplay->Text->Length > 0) {
+        if ((lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0' && lblDisplay->Text[lblDisplay->Text->Length - 1] <= '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+            lblDisplay->Text += L"*";
+        }
+    }
+    lblDisplay->Text += L"ln";
+    lblDisplay->Text += L"(";
+}
+private: System::Void button26_Click(System::Object^ sender, System::EventArgs^ e) {
+    if (lblDisplay->Text->Length > 0) {
+        if ((lblDisplay->Text[lblDisplay->Text->Length - 1] >= '0' && lblDisplay->Text[lblDisplay->Text->Length - 1] <= '9') || lblDisplay->Text[lblDisplay->Text->Length - 1] == ')') {
+            lblDisplay->Text += L"*";
+        }
+    }
+
+    lblDisplay->Text += M_E.ToString();
+
+}
+private: System::Void btnFive_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"5";
+}
+private: System::Void btnC_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"C";
+}
+private: System::Void buttonOne_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"1";
+}
+private: System::Void buttonthree_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"3";
+
+}
+private: System::Void btnF_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"F";
+
+}
+private: System::Void btnE_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"E";
+
+}
+private: System::Void btnSix_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"6";
+
+}
+private: System::Void buttonTwo_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"2";
+
+}
+private: System::Void btnfour_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"4";
+
+}
+private: System::Void btnB_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"B";
+
+}
+private: System::Void btnA_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"A";
+
+}
+private: System::Void tableLayoutPanel1_Paint(System::Object^ sender, System::Windows::Forms::PaintEventArgs^ e) {
+}
+private: System::Void btnSeven_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"7";
+
+}
+private: System::Void buttonEight_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"8";
+
+}
+private: System::Void buttonNine_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"9";
+
+}
+private: System::Void button0_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"0";
+
+}
+private: System::Void btnD_Click(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text += L"D";
+
+}
+private: System::Void comboBox1_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+    lblFrom->Text = "";
+    lblResultValue->Text = "";
+    if (comboBox1->SelectedItem == L"BINARY") {
+        buttonNine->Enabled = false;
+        buttonEight->Enabled = false;
+        btnSeven->Enabled = false;
+        btnSix->Enabled = false;
+        btnFive->Enabled = false;
+        btnfour->Enabled = false;
+        buttonthree->Enabled = false;
+        buttonTwo->Enabled = false;
+        buttonOne->Enabled = true;
+        button0->Enabled = true;
+
+        btnA->Enabled = false;
+        btnB->Enabled = false;
+        btnC->Enabled = false;
+        btnD->Enabled = false;
+        btnE->Enabled = false;
+        btnF->Enabled = false;
+    }
+    else if (comboBox1->SelectedItem == L"HEX") {
+        buttonNine->Enabled = true;
+        buttonEight->Enabled = true;
+        btnSeven->Enabled = true;
+        btnSix->Enabled = true;
+        btnFive->Enabled = true;
+        btnfour->Enabled = true;
+        buttonthree->Enabled = true;
+        buttonTwo->Enabled = true;
+        buttonOne->Enabled = true;
+        button0->Enabled = true;
+
+        btnA->Enabled = true;
+        btnB->Enabled = true;
+        btnC->Enabled = true;
+        btnD->Enabled = true;
+        btnE->Enabled = true;
+        btnF->Enabled = true;
+    }
+    else if (comboBox1->SelectedItem == L"OCTAL") {
+        buttonEight->Enabled = false;
+        buttonNine->Enabled = false;
+        btnA->Enabled = false;
+        btnB->Enabled = false;
+        btnC->Enabled = false;
+        btnD->Enabled = false;
+        btnE->Enabled = false;
+        btnF->Enabled = false;
+        btnSeven->Enabled = true;
+        btnSix->Enabled = true;
+        btnFive->Enabled = true;
+        btnfour->Enabled = true;
+        buttonthree->Enabled = true;
+        buttonTwo->Enabled = true;
+        buttonOne->Enabled = true;
+        button0->Enabled = true;
+    }
+    else if (comboBox1->SelectedItem == L"DECIMAL") {
+        btnA->Enabled = false;
+        btnB->Enabled = false;
+        btnC->Enabled = false;
+        btnD->Enabled = false;
+        btnE->Enabled = false;
+        btnF->Enabled = false;
+        buttonNine->Enabled = true;
+        buttonEight->Enabled = true;
+        btnSeven->Enabled = true;
+        btnSix->Enabled = true;
+        btnFive->Enabled = true;
+        btnfour->Enabled = true;
+        buttonthree->Enabled = true;
+        buttonTwo->Enabled = true;
+        buttonOne->Enabled = true;
+        button0->Enabled = true;
+    }
+}
+
+private: System::Void comboBox2_SelectedIndexChanged(System::Object^ sender, System::EventArgs^ e) {
+    if (lblFrom->Text->Length > 0) {
+        BaseConverter converter;
+        //to convert String ^ to standard string
+        //---------------------------------------
+        msclr::interop::marshal_context context;
+        std::string givenNum = context.marshal_as<std::string>(lblFrom->Text);
+        //---------------------------------------
+
+        int requiredBase;
+        int givenBase;
+        if (comboBox1->SelectedItem == "HEX") {
+            givenBase = 16;
+        }
+        else if (comboBox1->SelectedItem == L"BINARY") {
+            givenBase = 2;
+        }
+        else if (comboBox1->SelectedItem == "OCTAL") {
+            givenBase = 8;
+        }
+        else if (comboBox1->SelectedItem == "DECIMAL") {
+            givenBase = 10;
+        }
+
+        if (comboBox2->SelectedItem == "HEX") {
+            requiredBase = 16;
+        }
+        else if (comboBox2->SelectedItem == "BINARY") {
+            requiredBase = 2;
+        }
+        else if (comboBox2->SelectedItem == "OCTAL") {
+            requiredBase = 8;
+        }
+        else if (comboBox2->SelectedItem == "DECIMAL") {
+            requiredBase = 10;
+        }
+        string result = converter.convert(givenNum, givenBase, requiredBase);
+        lblResultValue->Text = gcnew String(result.c_str());
+    }
 }
 };
 }

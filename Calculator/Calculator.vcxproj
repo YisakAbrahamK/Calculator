@@ -126,17 +126,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BaseConverter.cpp" />
     <ClCompile Include="InfexToPostfix.cpp" />
     <ClCompile Include="MyForm.cpp" />
+    <ClCompile Include="MyStack.cpp" />
     <ClCompile Include="PostfixEvaluator.cpp" />
     <ClCompile Include="safep.cpp" />
     <ClCompile Include="Utilitie.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseConverter.h" />
     <ClInclude Include="InfixToPostfix.h" />
     <ClInclude Include="MyForm.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="MyStack.h" />
     <ClInclude Include="PostfixEvaluator.h" />
     <ClInclude Include="safep.h" />
     <ClInclude Include="Utilitie.h" />

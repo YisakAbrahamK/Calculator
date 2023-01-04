@@ -1,8 +1,8 @@
 #include "Utilitie.h"
-#include <stack>
+#include "MyStack.cpp"
 bool Utilite::areBracketsBalanced(string expr)
 {
-	stack<char> st;
+	MyStack<char> st;
 	for (int i = 0; i < expr.length();i++) {
 		if (expr[i] == '(') {
 			st.push('(');
@@ -22,8 +22,5 @@ bool Utilite::areBracketsBalanced(string expr)
 	}
 
 }
-bool Utilite::doubleDotChecker(string expr)
-{
-	//while()
-	return false;
-}
+
+

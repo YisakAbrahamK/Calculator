@@ -1,17 +1,12 @@
 ﻿#include <string>
-#include <stack>
+#include "MyStack.cpp"
 #include "InfixToPostfix.h"
 
 using namespace System::Windows::Forms;
 
-Mystack::Mystack() {
-	s = new char[n];
-	top = 999;
-};
-
 string infixToPost::toPost(string s)
 {
-    stack<char> st; 
+    MyStack<char> st; 
     string result;
 
     for (int i = 0; i < s.length(); i++) {
@@ -19,21 +14,38 @@ string infixToPost::toPost(string s)
 
         if ((c >= 'a' && c <= 'z') || (c >= 'A' && c <= 'Z')
             || (c >= '0' && c <= '9') || c=='.') {
-            if (c == 'l') {
-                st.push('l');
+            if (c == 'l'&&s[i+3]=='1') {
+                st.push('L'); //log10
+                i = i + 4;
                 continue;
-            }else if (c == 's') {
-                st.push('s');
+            }
+            else if ((c == 'l' && s[i + 1] == 'n')) {
+                st.push('E'); //sibolize ln
+                i++;
+                continue;
+            }
+            else if (c == 'l') {
+                st.push('l'); //log2
+                i = i + 3;
+                continue;
+            }
+            else if (c == 's' && s[i+3]=='t') {
+                st.push('r'); //sqrt
+                i = i + 3;
+                continue;
+            }
+            else if (c == 's') {
+                st.push('s');//sin
                 i = i + 2;
                 continue;
             }
             else if (c == 'c') {
-                st.push('c');
+                st.push('c');//cos
                 i = i + 2;
                 continue;
             }
             else if (c == 't') {
-                st.push('t');
+                st.push('t');//tan
                 i = i + 2;
                 continue;
             }
@@ -64,8 +76,20 @@ string infixToPost::toPost(string s)
         }
 
         else{
+            if (s[i] == '-') {
+                if (i != 0) {
+                    if ((s[i - 1] < '0' || s[i - 1]>'9') || s[i - 1] == '(') {
+                        st.push('n');
+                        continue;
+                    }
+                }
+                else {
+                    st.push('n'); //if '-' cames at the begining.
+                    continue;
+                }
+            }
             while (!st.empty()
-                && prec(s[i]) <= prec(st.top())) {
+                && prec(c) <= prec(st.top())) {
                 result += st.top();
                 result += '|';
                 st.pop();
@@ -84,9 +108,11 @@ string infixToPost::toPost(string s)
 
 int infixToPost::prec(char c)
 {
-    if (c == 's'||c=='t'||c=='c')
+    if (c == 'n')
+        return 5;
+    else if (c == 's'||c=='t'||c=='c'||c=='l'||c=='L'||c=='E')
         return 4;
-    else if (c == '^'||c=='√')
+    else if (c == '^'||c=='r')
         return 3;
     else if (c == '/' || c == '*')
         return 2;
